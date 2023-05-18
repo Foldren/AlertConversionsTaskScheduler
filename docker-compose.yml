@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  loop:
+    build: .
+    image: python-run
+    container_name: LOOP__AlertConversions
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - /home/.VOLUMES/LOOP__AlertConversions/source:/source:rw
+    tty: true
+    working_dir: /source
+    command: ["python", "run.py"]
